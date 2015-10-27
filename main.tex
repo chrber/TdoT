@@ -82,7 +82,7 @@
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
-\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+\begin{columns}[t, totalwidth=\textwidth] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
@@ -121,6 +121,8 @@ Internetteilnehmer von diesen Angriffen betroffen sein:
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
+\begin{column}{\sepwid}\end{column} % Empty spacer column	
+
 \begin{alertblock}{DESY als Angriffsziel?}
 \small{
 DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel. 
@@ -131,14 +133,14 @@ DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel.
 werden, zum Beispiel zum massenhaften Versenden von Spam.
 
 \item Rechenleistung: Die Analyse von wissenschaftlichen Daten erfordert 
-viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht 
-um Passwörter zu entschlüsseln oder andere Rechenintensive und damit 
-kostspielige Aktionen auszuführen.
+viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht werden,
+um Passwörter zu entschlüsseln, Bilderkennung zu betreiben, Medien yu streamen oder andere rechenintensive und damit kostspielige Aktionen auszuführen.
 
 \item  Speicherplatz: Die Massenspeicher am DESY haben eine GröSSe von über 
 15 Petabyte. Dieser Speicherplatz hat einen hohen Wert und kann zusammen 
 mit der Bandbreite zum unerlaubten Verbreiten Von Dateien (z.B. urheberrechtlich 
 geschützte Werke) missbraucht werden.
+
 \end{itemize}
 }
 \end{alertblock}
@@ -173,9 +175,9 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
  Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu dass
  Sicherheitslücken entstehen können, die von Angreifern ausgenutzt werden können. 
  Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
- von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele, 
- die die gleiche Software einsetzen ermöglicht. Leider haben verschiedene Geheimdienste
- aktiv darauf hingewirkt Sicherheitsmechanismen schwächen. Diese Schwachstellen können
+ von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele ermöglicht, 
+ die die gleiche Software einsetzen. Leider haben verschiedene Geheimdienste
+ aktiv darauf hingewirkt Sicherheitsmechanismen zu 		schwächen. Diese Schwachstellen können
  natürlich auch von nicht legitimierten Angreifern ausgenutzt werden.
  \par
  Konfigurationsfehler, z.B. Standardpasswörter oder veraltete Softwarepakete können
@@ -185,9 +187,9 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 
 \begin{block}{Angriffe auf Benutzer}
  Der weitaus grössere Anteil der Angriffe nutzt die Achtlosigkeit der Benutzer aus. 
- Bei gezielten wird z.B. versucht sich über Fishing-eMails deren Zugriffsrechte anzueignen. 
+ Bei gezielten Angriffen wird z.B. versucht sich über Fishing-eMails deren Zugriffsrechte anzueignen. 
  Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation zugeschnitten 
- und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails dennoch zu 
+ und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails dennoch 
  entlarven zu können, müssen die Benutzer geschult werden.
  \par
  Aber auch ungezielt können die Benutzer ungewollt zu Schwachstellen in der Sicherheit werden:
@@ -198,6 +200,15 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
  Verlorene oder gestohlene Geräte, z.B. SmartPhones speichern Passwörter und können sensible 
  Daten enthalten. Angreifer können diese Daten auslesen und für einen Angriff nutzen.
 \end{block}
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\end{columns} % End of all the columns in the poster
+\begin{columns}
+
+\begin{column}{0.95\textwidth}
 
 \begin{alertblock}{Schutz für Benutzer}
 \small{
@@ -250,11 +261,10 @@ beherzigen:
 }
 \end{alertblock}
 
-\end{column} % End of the second column
+\end{column}
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+\end{columns}
 
-\end{columns} % End of all the columns in the poster
 
 \end{frame} % End of the enclosing frame
 
