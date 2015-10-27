@@ -1,0 +1,261 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.1 (14/06/14)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+%
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+%\usepackage[scale=1.24, size=a0]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.24, size=a0, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
+
+
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+%\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
+%\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+%\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+%\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\sepwid}{0.024\textwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.22\textwidth} % Width of one column
+\setlength{\twocolwid}{0.464\textwidth} % Width of two columns
+\setlength{\threecolwid}{0.708\textwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{Netzwerksicherheit am DESY} % Poster title
+
+\author{Carsten Porthun, Christian Bernardt, Karsten Schwank} % Author(s)
+
+%\institute{Department and University Name} % Institution(s)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Einleitung}
+
+Das Internet ist ein offener Zusammenschluss aus Milliarden von unterschiedlichsten
+Teilnehmern. Während der ursprüngliche Zweck des Internets der Austausch von Informationen
+unter Wissenschaftlern war, hat heute nahezu jede Organisation eine Internetpräsens und
+es tangiert nahezu all unsere Lebensbereiche. Diese Tatsache macht das Internet leider auch
+zu einem Werkzeug von unterschiedlichen Angreifern, die versuchen illegal Gewinn aus dieser
+Tatsache zu ziehen.
+Die Angreifer nutzen unterschiedlichste Taktiken und je nach Ziel des Angreifers kann jeder
+Internetteilnehmer von diesen Angriffen betroffen sein:
+
+\begin{itemize}
+ \item Öffentliche Server sind häufig mit hoher Bandbreite an das Internet angebunden; das 
+ macht diese Systeme als Ziel interessant, da sich darüber schnell Daten verschicken lassen.
+ \item Viele Organisationen haben auch interne Computer an das Internet angeschlossen, um 
+ zum Beispiel unterschiedliche Filialen zu vernetzen. Diese System enthalten oft geheime Daten, 
+ wie Kundenpasswörter oder interne Dokumente.
+ \item Private Benutzer haben häufig schwach gesicherte Computer, so dass sie leicht massenhaft
+ automatisiert kompromittiert werden können. Die Angreifer können dann Computer weiter ausspionieren, 
+ um zum Beispiel Passwörter zu erlangen oder um den Computer für Angriffe auf weitere Systeme 
+ zu missbrauchen.
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{DESY als Angriffsziel?}
+\small{
+DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel. 
+
+\begin{itemize}
+\item Bandbreite: DESY hat eine sehr schnelle Anbindung an das Internet 
+(20 Gbit/s). Diese Bandbreite könnte für weitere Angriffe missbraucht 
+werden, zum Beispiel zum massenhaften Versenden von Spam.
+
+\item Rechenleistung: Die Analyse von wissenschaftlichen Daten erfordert 
+viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht 
+um Passwörter zu entschlüsseln oder andere Rechenintensive und damit 
+kostspielige Aktionen auszuführen.
+
+\item  Speicherplatz: Die Massenspeicher am DESY haben eine GröSSe von über 
+15 Petabyte. Dieser Speicherplatz hat einen hohen Wert und kann zusammen 
+mit der Bandbreite zum unerlaubten Verbreiten Von Dateien (z.B. urheberrechtlich 
+geschützte Werke) missbraucht werden.
+\end{itemize}
+}
+\end{alertblock}
+
+%------------------------------------------------
+
+\begin{block}{Wie wird DESY angegriffen?}
+
+Angreifer bedienen sich unterschiedlichster Methoden, um fremde Systeme zu 
+kompromittieren. Normale Angriffe lassen sich in zwei Kategorien aufteilen:
+
+\begin{itemize}
+ \item Ausnutzen von Software oder Konfigurationsschwachstellen.
+ \item Täuschung einzelner Mitarbeiter, um deren Zugriffsrechte zu missbrauchen.
+\end{itemize}
+
+Mächtigere Angreifer mit Zugriff auf Teile der Internet-Infrastruktur 
+(z.B. Geheimdienste) haben neben diesen Methoden noch die Möglichkeit 
+Netzwerkverbindungen abzuhören und zu manipulieren.
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+
+\begin{block}{Software- \& Konfigurationsschwachstellen}
+ Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu dass
+ Sicherheitslücken entstehen können, die von Angreifern ausgenutzt werden können. 
+ Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
+ von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele, 
+ die die gleiche Software einsetzen ermöglicht. Leider haben verschiedene Geheimdienste
+ aktiv darauf hingewirkt Sicherheitsmechanismen schwächen. Diese Schwachstellen können
+ natürlich auch von nicht legitimierten Angreifern ausgenutzt werden.
+ \par
+ Konfigurationsfehler, z.B. Standardpasswörter oder veraltete Softwarepakete können
+ Angreifern erlauben in interne Netzwerke einzubrechen und von dort weitere Systeme 
+ unter Kontrolle zu bringen.
+\end{block}
+
+\begin{block}{Angriffe auf Benutzer}
+ Der weitaus grössere Anteil der Angriffe nutzt die Achtlosigkeit der Benutzer aus. 
+ Bei gezielten wird z.B. versucht sich über Fishing-eMails deren Zugriffsrechte anzueignen. 
+ Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation zugeschnitten 
+ und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails dennoch zu 
+ entlarven zu können, müssen die Benutzer geschult werden.
+ \par
+ Aber auch ungezielt können die Benutzer ungewollt zu Schwachstellen in der Sicherheit werden:
+ Webbrowser und deren Plugins (z.B. das Flash-Plugin) haben in der Vergangenheit häufig
+ Fehler enthalten, die es Angreifern erlaubt, Schadcode auf den Computern der Anwender zu 
+ installieren.
+ \par
+ Verlorene oder gestohlene Geräte, z.B. SmartPhones speichern Passwörter und können sensible 
+ Daten enthalten. Angreifer können diese Daten auslesen und für einen Angriff nutzen.
+\end{block}
+
+\begin{alertblock}{Schutz für Benutzer}
+\small{
+Um im Internet nicht schutzlos unterwegs zu sein, sollten Benutzer einige Verhaltensweisen
+beherzigen:
+
+\begin{itemize}
+ \item Nutzen Sie wenn möglich verschlüsselte Verbindungen (https) zu Webservern, insbesondere
+ wenn diese sensible Daten abfragen.\par
+ Tools: 
+ HTTPS Everywhere: \includegraphics[height=0.7\baselineskip]{httpseverywhere}
+
+ \item Bei eMails unbekannter Herkunft oder eMails, die Aufforderungen enthalten, Zugangsdaten
+ preiszugeben ist besondere Vorsicht geboten. Überprüfen Sie den Absender und eventuell enthaltene
+ Links. Öffnen Sie Anhänge nur, wenn die Herkunft der eMail zweifelsfrei geklärt ist!
+ 
+ \item Halten Sie Ihr Betriebssystem und Programme - insbesondere Webbrowser und deren Plugins - 
+ immer aktuell!
+ 
+ \item Informieren Sie sich über aktuelle Sicherheitslücken. 
+ \includegraphics[height=0.7\baselineskip]{sicherimnetz}
+ 
+ \item Nutzen Sie Sicherheitsplugins, die verhindern dass Webseiten unkontrollierbar weitere
+ Ressourcen nachladen! \par
+ Tools: 
+ NoScript: \includegraphics[height=0.7\baselineskip]{noscript}, 
+ $\mu{}$Matrix \includegraphics[height=0.7\baselineskip]{umatrix}
+
+ \item Vermeiden Sie unnötige Preisgabe Ihrer Daten! Schon durch die Verknüpfung Ihrer 
+ Verbindungsdaten können detaillierte Profile erstellt werden, die es erlauben Sie gezielt zu 
+ manipulieren.
+ Tools:
+ Tracking kontrollieren: \includegraphics[height=0.7\baselineskip]{ghostery}
+ Werbenetzwerke erkennen: \includegraphics[height=0.7\baselineskip]{lightbeam}
+ 
+ \item Verschlüsseln Sie alle sensiblen Daten! Emails, Chatprotokolle und andere Dateien können
+ von Angreifern leicht ausgelesen werden, wenn sie nicht verschlüsselt sind. 
+ Tools: 
+ eMail-Verschlüsselung mit Enigmail: \includegraphics[height=0.7\baselineskip]{enigmail},
+ Vergleich unterschiedlicher Messenger: \includegraphics[height=0.7\baselineskip]{effmessenger}
+ 
+ \item Geben Sie keine Zugangsdaten in unverschlüsselten WLAN-Netzwerken ein. Mobilgeräte tun
+ dies unter Umständen ohne Ihr Zutun, sobald Sie sich verbinden. Benutzen Sie ein VPN 
+ \includegraphics[height=0.7\baselineskip]{vpn}, wenn sie öffentliche Hotspots nutzen möchten.
+ 
+ \item Viele Produkte haben freie Alternativen, die in vielen Fällen eine bessere Sicherheit
+ und besseren Datenschutz für die Anwender bieten. Eine Liste von interessanten Programmen finden
+ Sie unter hier: \includegraphics[height=0.7\baselineskip]{stopprism}, \includegraphics[height=0.7\baselineskip]{prismbreak}
+\end{itemize}
+}
+\end{alertblock}
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
