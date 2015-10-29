@@ -24,12 +24,20 @@
 
 \documentclass[final]{beamer}
 
-%\usepackage[scale=1.24, size=a0]{beamerposter} % Use the beamerposter package for laying out the poster
-\usepackage[scale=1.24, size=a0, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
-
-
-
 \usetheme{confposter} % Use the confposter theme supplied with this template
+%\usepackage[scale=1.24, size=a0]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.0, size=a0, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{graphicx}  % Required for including images
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{array}
+\usepackage{pst-barcode}
+
+\newcolumntype{C}[1]{>{\centering}m{#1}}
+\newcommand{\barcode}[1]{
+\url{#1} \begin{pspicture}(0.2in,0.2in) 
+\psbarcode[scalex=0.5,scaley=0.5]{#1}{}{qrcode} 
+\end{pspicture}
+}
 
 %\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
 %\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
@@ -56,9 +64,6 @@
 \setlength{\topmargin}{-0.5in} % Reduce the top margin size
 %-----------------------------------------------------------
 
-\usepackage{graphicx}  % Required for including images
-
-\usepackage{booktabs} % Top and bottom rules for tables
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -81,6 +86,32 @@
 \setlength\belowdisplayshortskip{2ex} % White space under equations
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t]
+ \begin{column}{0.95\textwidth}
+  \begin{alertblock}{DESY als Angriffsziel?}
+   \small{
+   DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel. 
+   \begin{itemize}
+    \item Bandbreite: DESY hat eine sehr schnelle Anbindung an das Internet 
+    (20 Gbit/s). Diese Bandbreite könnte für weitere Angriffe missbraucht 
+    werden, zum Beispiel zum massenhaften Versenden von Spam.
+
+    \item Rechenleistung: Die Analyse von wissenschaftlichen Daten erfordert 
+    viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht werden,
+    um Passwörter zu entschlüsseln, Bilderkennung zu betreiben, Medien zu streamen oder 
+    andere rechenintensive und damit kostspielige Aktionen auszuführen.
+
+    \item  Speicherplatz: Die Massenspeicher am DESY haben eine Grösse von über 
+    15 Petabyte. Dieser Speicherplatz hat einen hohen Wert und kann zusammen 
+    mit der Bandbreite zum unerlaubten Verbreiten Von Dateien (z.B. urheberrechtlich 
+    geschützte Werke) missbraucht werden.
+   \end{itemize}
+   }
+  \end{alertblock}
+ \end{column}
+\end{columns}
+
 
 \begin{columns}[t, totalwidth=\textwidth] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
@@ -123,28 +154,6 @@ Internetteilnehmer von diesen Angriffen betroffen sein:
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column	
 
-\begin{alertblock}{DESY als Angriffsziel?}
-\small{
-DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel. 
-
-\begin{itemize}
-\item Bandbreite: DESY hat eine sehr schnelle Anbindung an das Internet 
-(20 Gbit/s). Diese Bandbreite könnte für weitere Angriffe missbraucht 
-werden, zum Beispiel zum massenhaften Versenden von Spam.
-
-\item Rechenleistung: Die Analyse von wissenschaftlichen Daten erfordert 
-viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht werden,
-um Passwörter zu entschlüsseln, Bilderkennung zu betreiben, Medien yu streamen oder andere rechenintensive und damit kostspielige Aktionen auszuführen.
-
-\item  Speicherplatz: Die Massenspeicher am DESY haben eine GröSSe von über 
-15 Petabyte. Dieser Speicherplatz hat einen hohen Wert und kann zusammen 
-mit der Bandbreite zum unerlaubten Verbreiten Von Dateien (z.B. urheberrechtlich 
-geschützte Werke) missbraucht werden.
-
-\end{itemize}
-}
-\end{alertblock}
-
 %------------------------------------------------
 
 \begin{block}{Wie wird DESY angegriffen?}
@@ -163,6 +172,20 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 
 \end{block}
 
+\begin{block}{Software- \& Konfigurationsschwachstellen}
+ Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu dass
+ Sicherheitslücken entstehen können, die von Angreifern ausgenutzt werden können. 
+ Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
+ von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele ermöglicht, 
+ die die gleiche Software einsetzen. Leider haben verschiedene Geheimdienste aktiv darauf 
+ hingewirkt Sicherheitsmechanismen zu schwächen. Diese Schwachstellen können natürlich auch 
+ von nicht legitimierten Angreifern ausgenutzt werden.
+ \par
+ Konfigurationsfehler, z.B. Standardpasswörter oder veraltete Softwarepakete können
+ Angreifern erlauben in interne Netzwerke einzubrechen und von dort weitere Systeme 
+ unter Kontrolle zu bringen.
+\end{block}
+
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of the first column
@@ -170,20 +193,6 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
-
-\begin{block}{Software- \& Konfigurationsschwachstellen}
- Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu dass
- Sicherheitslücken entstehen können, die von Angreifern ausgenutzt werden können. 
- Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
- von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele ermöglicht, 
- die die gleiche Software einsetzen. Leider haben verschiedene Geheimdienste
- aktiv darauf hingewirkt Sicherheitsmechanismen zu 		schwächen. Diese Schwachstellen können
- natürlich auch von nicht legitimierten Angreifern ausgenutzt werden.
- \par
- Konfigurationsfehler, z.B. Standardpasswörter oder veraltete Softwarepakete können
- Angreifern erlauben in interne Netzwerke einzubrechen und von dort weitere Systeme 
- unter Kontrolle zu bringen.
-\end{block}
 
 \begin{block}{Angriffe auf Benutzer}
  Der weitaus grössere Anteil der Angriffe nutzt die Achtlosigkeit der Benutzer aus. 
@@ -197,8 +206,34 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
  Fehler enthalten, die es Angreifern erlaubt, Schadcode auf den Computern der Anwender zu 
  installieren.
  \par
- Verlorene oder gestohlene Geräte, z.B. SmartPhones speichern Passwörter und können sensible 
- Daten enthalten. Angreifer können diese Daten auslesen und für einen Angriff nutzen.
+ Verlorene oder gestohlene Geräte, z.B. SmartPhones enthalten Passwörter und weitere sensible 
+ Daten, die Angreifer leicht auslesen und für weitere Angriffe nutzen können.
+\end{block}
+
+\begin{figure}
+\centering
+\includegraphics[width=\twocolwid]{HTTPS-Check.jpg/HTTPS-check_003_wide}
+\caption{Zertifikat bei HTTPS Verbindungen prüfen}
+\label{sslcert}
+\end{figure}
+
+\begin{block}{Welche Programme sind sicher?}
+Oft weisen selbst als sicher vermarktete Programme massive Sicherheitslücken auf. \barcode{https://www.eff.org/secure-messaging-scorecard} hat hier einen sehr schönen Vergleich dargestellt, der zeigt was einige der beliebtesten Programme an Lücken aufweisen. Tabelle \ref{comparePrograms} zeigt eine Negativ-Auswahl aus diesem Vergleich. In der Darstellung befinden sich aber auch wenig bekannte Programme, die mehr Sicherheit versprechen und vom interessierten Leser einmal getestet werden könnten.
+\linebreak
+
+\begin{tabular}{ l | C{4cm} | C{4cm} | C{4cm} | C{4.5cm} | C{4cm} | C{5cm} | C{3cm} | }
+\label{comparePrograms}
+
+Prog. & Ver\-schlüs\-sel\-te Übertragung? & Unsichtbar beim Provider? & Identität bekannt? & Frühere Daten sicher, wenn Schlüssel gestohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
+\hline
+AIM & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline[0.5ex]
+Facebook chat & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
+Skype & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline
+FaceTime & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
+WhatsApp & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
+\hline
+\end{tabular}
+
 \end{block}
 
 \end{column} % End of the second column
@@ -206,7 +241,7 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \end{columns} % End of all the columns in the poster
-\begin{columns}
+\begin{columns}[b]
 
 \begin{column}{0.95\textwidth}
 
@@ -217,10 +252,11 @@ beherzigen:
 
 \begin{itemize}
  \item Nutzen Sie wenn möglich verschlüsselte Verbindungen (https) zu Webservern, insbesondere
- wenn diese sensible Daten abfragen.\par
+ wenn diese sensible Daten abfragen und vergewissern Sie sich, dass die Zertifikate der Webserver
+ gültig sind (siehe Abb. \ref{sslcert}).
  Tools: 
- HTTPS Everywhere: \includegraphics[height=0.7\baselineskip]{httpseverywhere}
-
+ HTTPS Everywhere: \barcode{bit.ly/1pgk9fU}
+ 
  \item Bei eMails unbekannter Herkunft oder eMails, die Aufforderungen enthalten, Zugangsdaten
  preiszugeben ist besondere Vorsicht geboten. Überprüfen Sie den Absender und eventuell enthaltene
  Links. Öffnen Sie Anhänge nur, wenn die Herkunft der eMail zweifelsfrei geklärt ist!
@@ -228,43 +264,47 @@ beherzigen:
  \item Halten Sie Ihr Betriebssystem und Programme - insbesondere Webbrowser und deren Plugins - 
  immer aktuell!
  
- \item Informieren Sie sich über aktuelle Sicherheitslücken. 
- \includegraphics[height=0.7\baselineskip]{sicherimnetz}
+ \item Informieren Sie sich über aktuelle Sicherheitslücken. \barcode{bit.ly/1Wj6BFs}
  
  \item Nutzen Sie Sicherheitsplugins, die verhindern dass Webseiten unkontrollierbar weitere
- Ressourcen nachladen! \par
- Tools: 
- NoScript: \includegraphics[height=0.7\baselineskip]{noscript}, 
- $\mu{}$Matrix \includegraphics[height=0.7\baselineskip]{umatrix}
+ Ressourcen nachladen!
+ \begin{itemize}
+     \item NoScript: \barcode{mzl.la_1Wj85zi}
+     \item $\mu{}$Matrix \barcode{mzl.la/1XAQMqK}
+\end{itemize}
 
  \item Vermeiden Sie unnötige Preisgabe Ihrer Daten! Schon durch die Verknüpfung Ihrer 
  Verbindungsdaten können detaillierte Profile erstellt werden, die es erlauben Sie gezielt zu 
  manipulieren.
- Tools:
- Tracking kontrollieren: \includegraphics[height=0.7\baselineskip]{ghostery}
- Werbenetzwerke erkennen: \includegraphics[height=0.7\baselineskip]{lightbeam}
+ \begin{itemize}
+    \item Tracking kontrollieren: \barcode{mzl.la/1nJHRBI}
+    \item Werbenetzwerke erkennen: \barcode{mzl.la/1RCMkDS}
+ \end{itemize}
  
  \item Verschlüsseln Sie alle sensiblen Daten! Emails, Chatprotokolle und andere Dateien können
  von Angreifern leicht ausgelesen werden, wenn sie nicht verschlüsselt sind. 
- Tools: 
- eMail-Verschlüsselung mit Enigmail: \includegraphics[height=0.7\baselineskip]{enigmail},
- Vergleich unterschiedlicher Messenger: \includegraphics[height=0.7\baselineskip]{effmessenger}
- 
+
+ \begin{itemize}
+    \item eMail-Verschlüsselung mit Enigmail: \barcode{mzl.la/1hrHU3n}
+    \item Sicherheitsvergleich unterschiedlicher Programme: \barcode{bit.ly/1E3UvBw}
+ \end{itemize}
+  
  \item Geben Sie keine Zugangsdaten in unverschlüsselten WLAN-Netzwerken ein. Mobilgeräte tun
  dies unter Umständen ohne Ihr Zutun, sobald Sie sich verbinden. Benutzen Sie ein VPN 
- \includegraphics[height=0.7\baselineskip]{vpn}, wenn sie öffentliche Hotspots nutzen möchten.
+\barcode{bit.ly/1PVVVrk}, wenn sie öffentliche Hotspots nutzen möchten.
  
  \item Viele Produkte haben freie Alternativen, die in vielen Fällen eine bessere Sicherheit
  und besseren Datenschutz für die Anwender bieten. Eine Liste von interessanten Programmen finden
- Sie unter hier: \includegraphics[height=0.7\baselineskip]{stopprism}, \includegraphics[height=0.7\baselineskip]{prismbreak}
+ Sie hier: \barcode{bit.ly/1P7djIR}, \barcode{bit.ly/1nSJfiZ}
+
 \end{itemize}
 }
 \end{alertblock}
 
+
 \end{column}
 
 \end{columns}
-
 
 \end{frame} % End of the enclosing frame
 
