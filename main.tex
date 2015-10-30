@@ -94,11 +94,11 @@
    DESY ist gleich aus mehreren Gründen für Angreifer ein attraktives Ziel. 
    \begin{itemize}
     \item Bandbreite: DESY hat eine sehr schnelle Anbindung an das Internet 
-    (20 Gbit/s). Diese Bandbreite könnte für weitere Angriffe missbraucht 
+    (2 x 10 Gbit/s zum Internet). Diese Bandbreite könnte für weitere Angriffe missbraucht 
     werden, zum Beispiel zum massenhaften Versenden von Spam.
 
     \item Rechenleistung: Die Analyse von wissenschaftlichen Daten erfordert 
-    viel Rechenleistung. Diese Rechenleistung könnte von Angreifern missbraucht werden,
+    viel Rechenleistung (>=20000 Prozessorkerne). Diese Rechenleistung könnte von Angreifern missbraucht werden,
     um Passwörter zu entschlüsseln, Bilderkennung zu betreiben, Medien zu streamen oder 
     andere rechenintensive und damit kostspielige Aktionen auszuführen.
 
@@ -196,10 +196,10 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 
 \begin{block}{Angriffe auf Benutzer}
  Der weitaus grössere Anteil der Angriffe nutzt die Achtlosigkeit der Benutzer aus. 
- Bei gezielten Angriffen wird z.B. versucht sich über Fishing-eMails deren Zugriffsrechte anzueignen. 
- Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation zugeschnitten 
- und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails dennoch 
- entlarven zu können, müssen die Benutzer geschult werden.
+ Bei gezielten Angriffen wird z.B. versucht sich über Phishing-eMails deren Zugriffsrechte 
+ anzueignen. Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation 
+ zugeschnitten und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails 
+ dennoch entlarven zu können, müssen die Benutzer geschult werden.
  \par
  Aber auch ungezielt können die Benutzer ungewollt zu Schwachstellen in der Sicherheit werden:
  Webbrowser und deren Plugins (z.B. das Flash-Plugin) haben in der Vergangenheit häufig
@@ -221,7 +221,7 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 Oft weisen selbst als sicher vermarktete Programme massive Sicherheitslücken auf. \barcode{https://www.eff.org/secure-messaging-scorecard} hat hier einen sehr schönen Vergleich dargestellt, der zeigt was einige der beliebtesten Programme an Lücken aufweisen. Tabelle \ref{comparePrograms} zeigt eine Negativ-Auswahl aus diesem Vergleich. In der Darstellung befinden sich aber auch wenig bekannte Programme, die mehr Sicherheit versprechen und vom interessierten Leser einmal getestet werden könnten.
 \linebreak
 
-\begin{tabular}{ l | C{4cm} | C{4cm} | C{4cm} | C{4.5cm} | C{4cm} | C{5cm} | C{3cm} | }
+\begin{tabular}{ l | C{4cm} | C{4.5cm} | C{4cm} | C{4.5cm} | C{4cm} | C{5cm} | C{3cm} | }
 \label{comparePrograms}
 
 Prog. & Ver\-schlüs\-sel\-te Übertragung? & Unsichtbar beim Provider? & Identität bekannt? & Frühere Daten sicher, wenn Schlüssel gestohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
@@ -246,7 +246,12 @@ WhatsApp & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=
 \begin{column}{0.95\textwidth}
 
 \begin{alertblock}{Schutz für Benutzer}
-\small{
+\setlength{\tabcolsep}{2cm}
+\begin{tabular*}{20cm}{ ll }
+
+
+\begin{minipage}[t]{0.45\linewidth}
+\small {
 Um im Internet nicht schutzlos unterwegs zu sein, sollten Benutzer einige Verhaltensweisen
 beherzigen:
 
@@ -266,12 +271,21 @@ beherzigen:
  
  \item Informieren Sie sich über aktuelle Sicherheitslücken. \barcode{bit.ly/1Wj6BFs}
  
- \item Nutzen Sie Sicherheitsplugins, die verhindern dass Webseiten unkontrollierbar weitere
+\item Nutzen Sie Sicherheitsplugins, die verhindern dass Webseiten unkontrollierbar weitere
  Ressourcen nachladen!
  \begin{itemize}
      \item NoScript: \barcode{mzl.la_1Wj85zi}
      \item $\mu{}$Matrix \barcode{mzl.la/1XAQMqK}
-\end{itemize}
+\end{itemize} 
+ 
+ \end{itemize}
+ } %end small
+\end{minipage}
+ &
+\begin{minipage}[t]{0.45\linewidth}
+
+\small {
+\begin{itemize}
 
  \item Vermeiden Sie unnötige Preisgabe Ihrer Daten! Schon durch die Verknüpfung Ihrer 
  Verbindungsdaten können detaillierte Profile erstellt werden, die es erlauben Sie gezielt zu 
@@ -280,7 +294,7 @@ beherzigen:
     \item Tracking kontrollieren: \barcode{mzl.la/1nJHRBI}
     \item Werbenetzwerke erkennen: \barcode{mzl.la/1RCMkDS}
  \end{itemize}
- 
+
  \item Verschlüsseln Sie alle sensiblen Daten! Emails, Chatprotokolle und andere Dateien können
  von Angreifern leicht ausgelesen werden, wenn sie nicht verschlüsselt sind. 
 
@@ -298,7 +312,9 @@ beherzigen:
  Sie hier: \barcode{bit.ly/1P7djIR}, \barcode{bit.ly/1nSJfiZ}
 
 \end{itemize}
-}
+} %end small
+\end{minipage}
+\end{tabular*}
 \end{alertblock}
 
 

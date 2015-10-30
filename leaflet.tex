@@ -1,0 +1,210 @@
+\documentclass[10pt,foldmark,tumble]{leaflet}
+\renewcommand*\foldmarkrule{.3mm}
+\renewcommand*\foldmarklength{5mm}
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{mathptmx}
+\usepackage{sans}
+\usepackage{pst-barcode}
+
+\makeatletter
+\def\ptmTeX{T\kern-.1667em\lower.5ex\hbox{E}\kern-.075emX\@}
+\DeclareRobustCommand{\ptmLaTeX}{L\kern-.3em
+        {\setbox0\hbox{T}%
+         %\vb@xt@ % :-)
+         \vbox to\ht0{\hbox{%
+                            \csname S@\f@size\endcsname
+                            \fontsize\sf@size\z@
+                            \math@fontsfalse\selectfont
+                            A}%
+                      \vss}%
+        }%
+        \kern-.12em
+        \ptmTeX}
+\makeatother
+\let\TeX=\ptmTeX
+\let\LaTeX=\ptmLaTeX
+\usepackage{shortvrb}
+\MakeShortVerb{\|}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\definecolor{DESYBlue}{RGB}{0,166,235}
+\definecolor{DESYOrange}{RGB}{242,142,0}
+
+%%%%\renewcommand{\descfont}{\normalfont}
+\newcommand\Lpack[1]{\textsf{#1}}
+\newcommand\Lclass[1]{\textsf{#1}}
+\newcommand\Lopt[1]{\texttt{#1}}
+\newcommand\Lprog[1]{\textit{#1}}
+
+\newcommand*\defaultmarker{\textsuperscript\textasteriskcentered}
+
+\newcommand{\barcode}[1]{
+\begin{pspicture}(1cm,1cm) 
+\psbarcode[scalex=0.4,scaley=0.4]{#1}{}{qrcode} 
+\end{pspicture}
+}
+
+\title{\textcolor{DESYBlue}{\bf Sicherheit@Home}\textcolor{DESYOrange}{\bf.}}
+
+\author{%
+\Large \textcolor{DESYBlue}{\bf Deutsches Elektronensynchrotron}
+}
+\date{\textcolor{DESYOrange}{\bf Tag der offenen Tür 2015}}
+
+\CutLine*{1}% Dotted line without scissors
+\CutLine{6}%  Dotted line with scissors
+
+%\AddToBackground{1}{%  Background of a small page
+%  \put(0,0){\textcolor{Cerulean}{\rule{\paperwidth}{\paperheight}}}}
+
+
+\AddToBackground{1}{%  Background of a small page
+  \put(210,525){\includegraphics[scale=0.1]{logo_desy}}}
+
+
+\AddToBackground{6}{%  Background of a small page
+  \put(0,0){\textcolor{DESYBlue}{\rule{\paperwidth}{\paperheight}}}}
+
+
+%\AddToBackground*{2}{% Background of a large page
+%  \put(\LenToUnit{.5\paperwidth},\LenToUnit{.5\paperheight}){%
+%    \makebox(0,0)[c]{%
+%      \resizebox{.9\paperwidth}{!}{\rotatebox{35.26}{%
+%        \textsf{\textbf{\textcolor{DESYOrange}{Tag der offenen Tür 2015}}}}}}}}
+
+\begin{document}
+
+\maketitle
+
+Vorschläge zur Verbesserung Ihrer Sicherheit im Internet
+
+\newpage
+
+\section{Das Internet}
+
+Das Internet ist ein offener Zusammenschluss aus Milliarden von unterschiedlichsten
+Teilnehmern. Während der ursprüngliche Zweck des Internets der Austausch von Informationen
+unter Wissenschaftlern war, hat heute nahezu jede Organisation eine Internetpräsens und
+es tangiert nahezu all unsere Lebensbereiche. Diese Tatsache macht das Internet leider auch
+zu einem Werkzeug von unterschiedlichen Angreifern, die versuchen illegal Gewinn aus dieser
+Tatsache zu ziehen.
+Die Angreifer nutzen unterschiedlichste Taktiken und je nach Ziel des Angreifers kann jeder
+Internetteilnehmer von diesen Angriffen betroffen sein:
+
+\begin{itemize}
+ \item Öffentliche Server sind häufig mit hoher Bandbreite an das Internet angebunden; das 
+ macht diese Systeme als Ziel interessant, da sich darüber schnell Daten verschicken lassen.
+ \item Viele Organisationen haben auch interne Computer an das Internet angeschlossen, um 
+ zum Beispiel unterschiedliche Filialen zu vernetzen. Diese System enthalten oft geheime Daten, 
+ wie Kundenpasswörter oder interne Dokumente.
+ \item Private Benutzer haben häufig schwach gesicherte Computer, so dass sie leicht massenhaft
+ automatisiert kompromittiert werden können. Die Angreifer können dann Computer weiter ausspionieren, 
+ um zum Beispiel Passwörter zu erlangen oder um den Computer für Angriffe auf weitere Systeme 
+ zu missbrauchen.
+\end{itemize}
+
+\section{Sicherheitsrisiken}
+
+\subsection{Software- und Konfigurationsfehler}
+
+Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu, dass
+Sicherheitslücken entstehen können, die mögliche Einfallstore für Angreifer darstellen. 
+Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
+von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele 
+ermöglicht, die die gleiche Software einsetzen. Leider haben verschiedene Geheimdienste 
+aktiv darauf hingewirkt Sicherheitsmechanismen zu schwächen. Diese Schwachstellen können 
+natürlich auch von nicht legitimierten Angreifern ausgenutzt werden.
+Konfigurationsfehler, z.B. Standardpasswörter oder veraltete Softwarepakete können 
+Angreifern erlauben in interne Netzwerke einzubrechen und von dort weitere Systeme unter
+Kontrolle zu bringen.
+
+\subsection{Benutzerfehler}
+
+Der weitaus grössere Anteil der Angriffe nutzt jedoch die Achtlosigkeit der Benutzer aus. 
+Bei gezielten Angriffen wird z.B. versucht sich über Phishing-eMails deren Zugriffsrechte 
+anzueignen. Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation 
+zugeschnitten und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails 
+dennoch entlarven zu können, müssen die Benutzer geschult werden.
+Aber auch ungezielt können die Benutzer ungewollt zu Schwachstellen in der Sicherheit
+werden: Webbrowser und deren Plugins (z.B. das Flash-Plugin) haben in der Vergangen-
+heit häufig Fehler enthalten, die es Angreifern erlaubt, Schadcode auf den Computern der
+Anwender zu installieren.
+Verlorene oder gestohlene Geräte, z.B. SmartPhones enthalten Passwörter und weitere sen-
+sible Daten, die Angreifer leicht auslesen und für weitere Angriffe nutzen können.
+
+\section{Hilfe zur Selbsthilfe}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{HTTPS-Check.jpg/HTTPS-check_003}
+\caption{Zertifikat bei HTTPS Verbindungen prüfen}
+\label{sslcert}
+\end{figure}
+
+Um im Internet nicht schutzlos unterwegs zu sein, sollten Benutzer einige Verhaltensweisen
+beherzigen:
+
+\begin{itemize}
+ \item Nutzen Sie wenn möglich verschlüsselte Verbindungen (https) zu Webservern, insbesondere
+ wenn diese sensible Daten abfragen und vergewissern Sie sich, dass die Zertifikate der Webserver
+ gültig sind (siehe Abb. 1).
+ \begin{itemize}
+  \item[\barcode{bit.ly/1pgk9fU}] HTTPS Everywhere
+ \end{itemize}
+ 
+ \item Bei eMails unbekannter Herkunft oder eMails, die Aufforderungen enthalten, Zugangsdaten
+ preiszugeben ist besondere Vorsicht geboten. Überprüfen Sie den Absender und eventuell enthaltene
+ Links. Öffnen Sie Anhänge nur, wenn die Herkunft der eMail zweifelsfrei geklärt ist!
+ 
+ \item Halten Sie Ihr Betriebssystem und Programme - insbesondere Webbrowser und deren Plugins - 
+ immer aktuell!
+ 
+ \item Informieren Sie sich über aktuelle Sicherheitslücken. 
+ \begin{itemize}
+  \item [\barcode{bit.ly/1Wj6BFs}] BSI für Bürger
+ \end{itemize}
+ 
+ \item Nutzen Sie Sicherheitsplugins, die verhindern dass Webseiten unkontrollierbar weitere
+ Ressourcen nachladen!
+ \begin{itemize}
+  \item[\barcode{mzl.la/1Wj85zi}] NoScript Plugin
+  \item[\barcode{mzl.la/1XAQMqK}] $\mu{}$Matrix Plugin
+ \end{itemize} 
+
+ \item Vermeiden Sie unnötige Preisgabe Ihrer Daten! Schon durch die Verknüpfung Ihrer 
+ Verbindungsdaten können detaillierte Profile erstellt werden, die es erlauben Sie gezielt zu 
+ manipulieren.
+ \begin{itemize}
+  \item[\barcode{mzl.la/1nJHRBI}] Tracking kontrollieren mit Ghostery Plugin
+  \item[\barcode{mzl.la/1RCMkDS}] Werbenetzwerke erkennen mit Lightbeam Plugin
+ \end{itemize}
+
+ \item Verschlüsseln Sie alle sensiblen Daten! Emails, Chatprotokolle und andere Dateien können
+ von Angreifern leicht ausgelesen werden, wenn sie nicht verschlüsselt sind. 
+
+ \begin{itemize}
+  \item[\barcode{mzl.la/1hrHU3n}] eMail-Verschlüsselung mit Enigmail Plugin für Thunderbird
+  \item[\barcode{bit.ly/1E3UvBw}] Sicherheitsvergleich unterschiedlicher Kommunikationsprogramme
+ \end{itemize}
+  
+ \item Geben Sie keine Zugangsdaten über unverschlüsselte WLAN-Netzwerken ein! Mobilgeräte tun
+ dies unter Umständen ohne Ihr Zutun, sobald Sie sich verbinden. Benutzen Sie ein VPN, wenn sie 
+ öffentliche Hotspots nutzen möchten.
+ \begin{itemize}
+  \item[\barcode{bit.ly/1PVVVrk}] Erklärung zu VPN
+ \end{itemize}
+
+ \item Viele Produkte haben freie Alternativen, die in vielen Fällen eine bessere Sicherheit
+ und besseren Datenschutz für die Anwender bieten. Eine Liste von interessanten Programmen finden
+ Sie hier:
+ \begin{itemize}
+ \item[\barcode{bit.ly/1P7djIR}] Freie und sichere Alternativen zu kommerziellen Programmen
+ \item[\barcode{bit.ly/1nSJfiZ}] Weitere Empfehlungen zur Sicherheit
+ \end{itemize}
+\end{itemize}
+ 
+\end{document}
