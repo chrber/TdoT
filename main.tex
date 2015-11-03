@@ -70,9 +70,9 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{Netzwerksicherheit am DESY} % Poster title
+\title{\includegraphics[]{pics/Sicherheit_header.pdf}} % Poster title
 
-\author{Carsten Porthun, Christian Bernardt, Karsten Schwank} % Author(s)
+%\author{} % Author(s)
 
 %\institute{Department and University Name} % Institution(s)
 
@@ -98,67 +98,38 @@
 \end{column}
 \end{columns}
 
-\begin{columns}[t, totalwidth=\textwidth] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{0.9\twocolwid} % The first column
+\begin{column}{0.95\textwidth} % The first column
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Netzwerksicherheit in DESY}
+\begin{block}{IT-Sicherheit in DESY}
 
 Das Internet startete als Mittel zum Austausch von Informationen
 unter Wissenschaftlern. Natürlich benutzen auch heute Wissenschaftler das Internet und sind den gleichen
 Gefahren ausgesetzt, denen auch Sie ausgesetzt sind. DESY hat natürlich auch die Aufgabe, die angeschafften
-Resourcen und deren Nutzer vor Angriffen Dritter zu schützen. Dies ist die Aufgabe der Netzwerksicherheit. Natürlich ist auch jeder Wissenschaftler dazu angehalten, sich selbst und damit DESY zu schützen, indem Sie sichere Programme nutzen und ihre Informationssysteme auf dem neusten Stand halten. Die Maßnahmen, die Wissenschaftler treffen, um sich zu schützen sind die gleichen, die auch Sie nutzen können, um besser geschützt zu sein. Hundertprozentiger Schutz ist nicht erreichbar, aber einiges kann man schon machen. Eine wichtige Maßnahme ist, sichere Programme zu verwenden, was auch für Sie wichtig ist.
+Resourcen und deren Nutzer vor Angriffen Dritter zu schützen. Dies ist die Aufgabe der IT-SICHerheit. 
+Natürlich ist auch jeder Wissenschaftler dazu angehalten, sich selbst und damit DESY zu schützen, indem Sie sichere Programme nutzen und ihre Informationssysteme auf dem neusten Stand halten. Die Ma{\ss}nahmen, die Wissenschaftler treffen, um sich zu schützen sind die gleichen, die auch Sie nutzen können.
+Dieser Stand zeigt Ihnen einige Teile der IT-Sicherheit.
 
 \end{block}
 
-\begin{block}{Welche Programme sind sicher?}
-Oft weisen selbst als sicher vermarktete Programme massive Sicherheitslücken auf. \barcode{https://www.eff.org/secure-messaging-scorecard} hat hier einen sehr schönen Vergleich dargestellt, der zeigt was einige der beliebtesten Programme an Lücken aufweisen. Tabelle \ref{comparePrograms} zeigt eine Auswahl aus diesem Vergleich. In der Darstellung befinden sich aber auch weniger bekannte Programme, die mehr Sicherheit versprechen und vom interessierten Leser einmal getestet werden könnten.
-\linebreak
+\begin{block}{Hier finden Sie:}
+
+\begin{center}
+\begin{itemize}
+    \item Warum DESY sich schützen muss?
+    \item Wie DESY sich schützt?
+    \item Was Sie machen können, um sich zu schützen?
+\end{itemize}
+\end{center}
+
 \end{block}
 
-\end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{1.2\twocolwid} % Begin a column which is two columns wide (column 2)
-
-\begin{tabular}{ L{8cm} | C{4.5cm} | C{4.5cm} | C{4.5cm} | C{4.5cm} | C{4.5cm} | C{5cm} | C{4.5cm} | }
-\label{comparePrograms}
-
-Prog. & Ver\-schlüs\-sel\-te Über\-tra\-gung? & Un\-sicht\-bar beim Pro\-vider? & Iden\-tität be\-kannt? & Frühere Daten sicher, wenn Schlüssel ge\-stohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
-\hline
-AIM & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline[0.5ex]
-Facebook chat & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-Skype & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline
-FaceTime & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-WhatsApp & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-Google Hangout & x & y & y & y & y & y & x \tabularnewline
-iMessage & x & x & y & x & y & x & x \tabularnewline
-Jitsi+Ostel  & x & x & x & x & x & x & y \tabularnewline
-Mailvelope   & x & x & x & y & x & x & x \tabularnewline
-Adium+OTR & x & x & x & x & x & x & y \tabularnewline
-Pidgin+OTR & x & x & x & x & x & x & x \tabularnewline
-GPGTools & x & x & x & y & x & x & y \tabularnewline
-Retroshare & x & x & x & x & x & x & y \tabularnewline
-Signal / Redphone & x & x & x & x & x & x & x \tabularnewline
-Silent Phone & x & x & x & x & x & x & x \tabularnewline
-Silent Text & x & x & x & x & x & x & x \tabularnewline
-Subrosa & x & x & x & y & x & x & x \tabularnewline
-SureSpot & x & x & x & y & x & x & y \tabularnewline
-Telegram (secret chat) & x & x & x & x & x & x & x \tabularnewline
-TextSecure & x & x & x & x & x & x & x \tabularnewline
-\hline
-\end{tabular}
-
-\end{column} % End of the second column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+\end{column}
 
 \end{columns} % End of all the columns in the poster
 
