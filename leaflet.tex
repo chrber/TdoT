@@ -9,7 +9,7 @@
 \usepackage{sans}
 \usepackage{pst-barcode}
 \usepackage{array}
-
+\usepackage{caption}
 
 \makeatletter
 \def\ptmTeX{T\kern-.1667em\lower.5ex\hbox{E}\kern-.075emX\@}
@@ -213,9 +213,15 @@ beherzigen:
  \end{itemize}
 \end{itemize}
 
+\vspace{1cm} 
+Die Tabelle auf der nächsten Seite stellt eine Auswahl, aus dem Vergleich von \begin{pspicture}(0.4cm,0.4cm) 
+\psbarcode[scalex=0.15,scaley=0.15]{https://www.eff.org/secure-messaging-scorecard}{}{qrcode} 
+\end{pspicture} \url{https://www.eff.org/secure-messaging-scorecard} dar.
+
+\begin{center}
 \tiny{
 \rotatebox{90}{
-\begin{tabular}{ L{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | }
+\begin{tabular}{ L{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} }
 \label{comparePrograms}
 
 Prog. & Ver\-schlüs\-sel\-te Über\-tra\-gung? & Un\-sicht\-bar beim Pro\-vider? & Iden\-tität be\-kannt? & Frühere Daten sicher, wenn Schlüssel ge\-stohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
@@ -240,9 +246,9 @@ Subrosa & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0
 SureSpot & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
 Telegram (secret chat) & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
 TextSecure & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
-\hline
 \end{tabular}
 } % end rotatebox
 } % end tiny
+\end{center}
  
 \end{document}
