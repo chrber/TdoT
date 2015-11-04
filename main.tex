@@ -69,9 +69,9 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{Netzwerksicherheit am DESY} % Poster title
+\title{\includegraphics[scale=0.8]{pics/Sicherheit_header.pdf}} % Poster title
 
-\author{Carsten Porthun, Christian Bernardt, Karsten Schwank} % Author(s)
+\author{} % Author(s)
 
 %\institute{Department and University Name} % Institution(s)
 
@@ -173,10 +173,10 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 \end{block}
 
 \begin{block}{Software- \& Konfigurationsschwachstellen}
- Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu dass
- Sicherheitslücken entstehen können, die von Angreifern ausgenutzt werden können. 
+ Die hohe Komplexität in heutigen Softwaresystemen und Infrastrukturen führt dazu, dass
+ Sicherheitslücken entstehen und von Angreifern ausgenutzt werden können. 
  Gerade weit verbreitete Software, wie Betriebssysteme, Web- und Datenbankserver werden 
- von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele ermöglicht, 
+ von Angreifern auf Schwachstellen analysiert, die dann den Angriff auf viele Ziele ermöglichen, 
  die die gleiche Software einsetzen. Leider haben verschiedene Geheimdienste aktiv darauf 
  hingewirkt Sicherheitsmechanismen zu schwächen. Diese Schwachstellen können natürlich auch 
  von nicht legitimierten Angreifern ausgenutzt werden.
@@ -194,10 +194,34 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
 
+\begin{block}{}
+Angriffe auf Softwaresysteme funktionieren in der Regel so, dass Programmierfehler ausgenutzt 
+werden, um im ersten Schritt die Zugriffsrechte des Softwaresystems selbst zu erlangen und
+dann mit diesen Rechten Funtionen auszuführen, die es dem Angreifer erlauben tiefer in das 
+System einzudringen. Beispielsweise laufen Webseiten-Server mit Rechten, die es ihnen erlauben,
+Webseitendateien zu modifizieren und Dateien zu lesen, die zum Beispiel Passwörter für 
+verbundene Datenbanken enthalten. Erlangt ein Angreifer diese Rechte, kann er die Webseiten
+für seine Zwecke modifizieren und zum Beispiel Kundendaten aus der Datenbank auslesen oder
+modifizieren.
+\par
+Ähnliche Angriffe können aber auch jeden Benutzer betreffen: Computerviren, pflanzen sich dadurch
+fort, dass sie Sicherheitslücken in Standardsoftware ausnutzen, um sich zu replizieren und mit den
+Rechten der Nutzer Angriffe auf das eigene oder auf andere Systeme durchzuführen. Solche Viren
+können in heruntergeladenen Dateien oder in den im nächsten Abschnitt erläuterten Phishing-eMails
+enthalten sein. 
+\par
+Mit der zunehmenden Verbreitung von Smartphones werden auch diese zunehmend für Angreifer 
+interessant. Smartphones enthalten oft eine Vielzahl von persönlichen und geheimen Daten, die 
+Angreifer nutzen können. Eine kürzlich entdeckte Sicherheitslücke im Android-Betriebssystem erlaubte 
+es Angreifern über speziell preparierte MMS Nachrichten volle Zugriffsrechte auf das Smartphone 
+zu erhalten. Da viele Hersteller diese Sicherheitslücke bis heute nicht geschlossen haben, müssen
+die Benutzer selbst aktiv Vorkehrungen treffen, um nicht Opfer dieser Angriffe zu werden.
+\end{block}
+
 \begin{block}{Angriffe auf Benutzer}
- Der weitaus grössere Anteil der Angriffe nutzt die Achtlosigkeit der Benutzer aus. 
- Bei gezielten Angriffen wird z.B. versucht sich über Phishing-eMails deren Zugriffsrechte 
- anzueignen. Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation 
+ Der weitaus grössere Anteil der Angriffe nutzt aber einfach die Achtlosigkeit der Benutzer aus. 
+ Bei gezielten Angriffen wird z.B. versucht mit sogenannten Phishing-eMails die Benutzer zu verleiten
+ Zugriffsdaten preiszugeben. Diese eMails werden zum Teil speziell für die Mitarbeiter einer Organisation 
  zugeschnitten und gleichen diesen unter Umständen selbst in feinen Details. Um solche eMails 
  dennoch entlarven zu können, müssen die Benutzer geschult werden.
  \par
@@ -216,25 +240,6 @@ Netzwerkverbindungen abzuhören und zu manipulieren.
 \caption{Zertifikat bei HTTPS Verbindungen prüfen}
 \label{sslcert}
 \end{figure}
-
-\begin{block}{Welche Programme sind sicher?}
-Oft weisen selbst als sicher vermarktete Programme massive Sicherheitslücken auf. \barcode{https://www.eff.org/secure-messaging-scorecard} hat hier einen sehr schönen Vergleich dargestellt, der zeigt was einige der beliebtesten Programme an Lücken aufweisen. Tabelle \ref{comparePrograms} zeigt eine Negativ-Auswahl aus diesem Vergleich. In der Darstellung befinden sich aber auch wenig bekannte Programme, die mehr Sicherheit versprechen und vom interessierten Leser einmal getestet werden könnten.
-\linebreak
-
-\begin{tabular}{ l | C{4cm} | C{4.5cm} | C{4cm} | C{4.5cm} | C{4cm} | C{5cm} | C{3cm} | }
-\label{comparePrograms}
-
-Prog. & Ver\-schlüs\-sel\-te Übertragung? & Unsichtbar beim Provider? & Identität bekannt? & Frühere Daten sicher, wenn Schlüssel gestohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
-\hline
-AIM & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline[0.5ex]
-Facebook chat & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-Skype & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} \tabularnewline
-FaceTime & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-WhatsApp & \includegraphics[scale=0.5]{pics/haken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/nohaken.png} & \includegraphics[scale=0.5]{pics/haken.png} \tabularnewline
-\hline
-\end{tabular}
-
-\end{block}
 
 \end{column} % End of the second column
 
