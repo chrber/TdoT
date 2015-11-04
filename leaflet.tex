@@ -8,6 +8,8 @@
 \usepackage{mathptmx}
 \usepackage{sans}
 \usepackage{pst-barcode}
+\usepackage{array}
+
 
 \makeatletter
 \def\ptmTeX{T\kern-.1667em\lower.5ex\hbox{E}\kern-.075emX\@}
@@ -48,10 +50,13 @@
 \end{pspicture}
 }
 
+\newcolumntype{C}[1]{>{\centering}m{#1}}
+\newcolumntype{L}[1]{>{}m{#1}}
+
 \title{\textcolor{DESYBlue}{\bf Sicherheit@Home}\textcolor{DESYOrange}{\bf.}}
 
 \author{%
-\Large \textcolor{DESYBlue}{\bf Deutsches Elektronensynchrotron}
+\Large \textcolor{DESYBlue}{\bf Deutsches Elektronen-Synchrotron}
 }
 \date{\textcolor{DESYOrange}{\bf Tag der offenen Tür 2015}}
 
@@ -67,7 +72,8 @@
 
 
 \AddToBackground{6}{%  Background of a small page
-  \put(0,0){\textcolor{DESYBlue}{\rule{\paperwidth}{\paperheight}}}}
+  \put(0,0){\textcolor{DESYBlue}{\rule{\paperwidth}{\paperheight}}
+  }}
 
 
 %\AddToBackground*{2}{% Background of a large page
@@ -206,5 +212,36 @@ beherzigen:
  \item[\barcode{bit.ly/1nSJfiZ}] Weitere Empfehlungen zur Sicherheit
  \end{itemize}
 \end{itemize}
+
+
+\rotatebox{90}{
+\begin{tabular}{ L{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | C{2cm} | }
+\label{comparePrograms}
+
+Prog. & Ver\-schlüs\-sel\-te Über\-tra\-gung? & Un\-sicht\-bar beim Pro\-vider? & Iden\-tität be\-kannt? & Frühere Daten sicher, wenn Schlüssel ge\-stohlen? & Sourcen offen? & Programm Design dokumentiert? & Gab es einen zeitnahen code Audit? \tabularnewline
+\hline
+AIM & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline[0.5ex]
+Facebook chat & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Skype & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+FaceTime & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+WhatsApp & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Google Hangout & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+iMessage & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Jitsi+Ostel  & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+Mailvelope   & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Adium+OTR & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+Pidgin+OTR & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+GPGTools & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+Retroshare & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+Signal / Redphone & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Silent Phone & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Silent Text & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+Subrosa & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+SureSpot & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/nohaken.png} \tabularnewline
+Telegram (secret chat) & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+TextSecure & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} & \includegraphics[scale=0.1]{pics/haken.png} \tabularnewline
+\hline
+\end{tabular}
+}
  
 \end{document}
